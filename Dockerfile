@@ -3,10 +3,12 @@ FROM bconnect/gitlab-base
 ENV WEB_HOOK_URL https://notify.b-connect.eu
 ENV NOTIFICATION_TOKEN 12345
 ENV MESSAGE_TEMPLATE ''
-ENV GITLAB_PROJECT_ID 1
+ENV GITLAB_PROJECT_NAME 'project'
 
-ADD test.sh /test.sh
 ADD runner.sh /runner.sh
+ADD success.sh /success.sh
+ADD error.sh /error.sh
 
-RUN chmod +x /test.sh
 RUN chmod +x /runner.sh
+RUN chmod +x /error.sh
+RUN chmod +x /success.sh
