@@ -3,42 +3,47 @@
 MESSAGE_TEMPLATE=$(cat << EOF
 {
   "project": {
-    "name": "test"
+    "name": "${GITLAB_PROJECT_NAME}"
   },
   "content": {
     "version": 1,
     "type": "doc",
     "content": [
-        {
+      {
         "type": "applicationCard",
         "attrs": {
-            "collapsible": true,
-            "title": {
+          "text": "some text",
+          "collapsible": true,
+          "title": {
             "text": "${CI_PROJECT_PATH}",
             "user": {
-                "icon": {
-                "url": "https://b-connect.de/sites/all/themes/bctheme/logo.png",
-                "label": "Logo"
-                }
+              "icon": {
+                  "url": "https://b-connect.de/sites/all/themes/bctheme/logo.png",
+                "label": "logo"
+              }
             }
-            },
-            "description": {
-            "text": "\nOops! Something went wrong with ${CI_PROJECT_NAME} - ${CI_COMMIT_TAG}.\n"
-            },
-            "details": [
+          },
+          "description": {
+              "text": "\nOops! Something went wrong with ${CI_PROJECT_NAME} - ${CI_COMMIT_TAG}.\n"
+          },
+          "details": [
             {
-                "lozenge": {
-                "bold": true,
-                "text": "Build failed",
-                "appearance": "removed"
-                }
+              "lozenge": {
+                  "bold": true,
+                  "text": "Build failed",
+                  "appearance": "removed"
+              }
             }
-            ],
-            "context": {
-            "text": "${CI_COMMIT_SHA}"
+          ],
+          "context": {
+            "text": "${CI_COMMIT_SHA}",
+            "icon": {
+              "url": "https://i1.wp.com/struscode.com/wp-content/uploads/2017/08/head-from-gitlab-logo-small-min.png",
+              "label": "logo"
             }
+          }
         }
-        }
+      }
     ]
   }
 }
