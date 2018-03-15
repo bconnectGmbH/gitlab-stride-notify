@@ -8,6 +8,7 @@ ENV GITLAB_PROJECT_NAME 'project'
 ADD runner.sh /runner.sh
 ADD success.sh /success.sh
 ADD error.sh /error.sh
+ADD pre-load.sh /pre-load.sh
 
 RUN chmod +x /runner.sh
 RUN chmod +x /error.sh
