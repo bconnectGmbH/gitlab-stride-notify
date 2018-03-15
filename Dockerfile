@@ -1,7 +1,7 @@
 FROM bconnect/gitlab-base
 
 ENV WEB_HOOK_URL https://notify.b-connect.eu
-ENV NOTIFICATION_TOKEN 12345
+ENV NOTIFICATION_TOKEN notify
 ENV MESSAGE_TEMPLATE ''
 ENV GITLAB_PROJECT_NAME 'project'
 
